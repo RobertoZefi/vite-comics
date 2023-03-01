@@ -2,7 +2,18 @@
 export default{
     data(){
         return{
-            
+            listItem: [
+                'characters',
+                'comics',
+                'movies',
+                'tv',
+                'games',
+                'collectibles',
+                'videos',
+                'fans',
+                'news',
+                'shop'
+            ]
         }
     }
 }
@@ -17,16 +28,7 @@ export default{
 
         <div class="col">
             <ul class="list">
-                <li>characters</li>
-                <li>comics</li>
-                <li>movies</li>
-                <li>tv</li>
-                <li>games</li>
-                <li>collectibles</li>
-                <li>videos</li>
-                <li>fans</li>
-                <li>news</li>
-                <li>shop</li>
+                <li v-for="element in listItem">{{ element }}</li>
             </ul>
         </div>
     </div>
@@ -36,6 +38,7 @@ export default{
 
 <style scoped lang="scss">
 @use '../partials/style/variables.scss';
+@use '../partials/style/mixins.scss' as*;
 
 .container{
     padding: 20px 0;
@@ -50,7 +53,23 @@ export default{
 
     li{
         text-transform: uppercase;
-        font-size: 15px;
+        font-size: 14px;
+        color: $color-darkGray;
+        /*position: relative;
+        display: flex;
+        flex-direction: column;
+
+        &:hover{
+            color: $color-comics;
+        }
+
+        &:hover::after{
+            content: '';
+            position: absolute;
+            border-bottom: 2px solid $color-comics;
+            width: 100%;
+            bottom: 0;
+        }*/
     }
 }
 </style>
