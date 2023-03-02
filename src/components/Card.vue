@@ -24,13 +24,15 @@ props:{
 
 .card{
     img{
-        width: 185px;
         aspect-ratio: 1;
+        object-fit: cover;
     }
     .title{
         text-transform: uppercase;
         color: white;
         font-weight: 500;
+        margin-top: 20px;
+        font-size: 15px;
     }
 }
 </style>
